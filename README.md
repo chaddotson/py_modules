@@ -7,4 +7,8 @@ pip install --install-option="--prefix=$(PWD)/py_modules" _PACKAGE_
 
 or 
 
-pip3 install --install-option="--prefix=$(PWD)/py_modules" _PACKAGE_ 
+pip3 install --install-option="--prefix=$(PWD)/py_modules" _PACKAGE_
+
+# Current Shortfall
+It looks for py_modules in the directory activate was run in.  This will eventually be corrected and generalized.
+
