@@ -12,5 +12,4 @@ or
 pip3 install --install-option="--prefix=$(PWD)/py_modules" _PACKAGE_
 
 ## Current Shortfalls
-- It looks for py_modules in the directory activate was sourced in.  This will eventually be corrected and generalized.
-
+- source [PATH_TO_ACTIVATE]/activate must be ran from the directory containing the py_modules directory.

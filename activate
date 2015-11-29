@@ -23,17 +23,18 @@ deactivate () {
 }
 
 
+MODULE_PATH="$PWD/py_modules/"
+
+
 PYTHON=$(command -v python)
 if [ -n "$PYTHON3" ]; then
 
     PYTHONVERSION=$($PYTHON -c 'import sys;print("{0}.{1}".format(sys.version_info.major, sys.version_info.minor))')
 
     python () {
-        PYTHONPATH="$PWD/py_modules/lib/python$PYTHONVERSION/site-packages/:$PYTHONPATH" $PYTHON "$@"
+        PYTHONPATH="$MODULE_PATH/lib/python$PYTHONVERSION/site-packages/:$PYTHONPATH" $PYTHON "$@"
     }
 fi
-
-
 
 
 PYTHON3=$(command -v python3)
@@ -42,6 +43,6 @@ if [ -n "$PYTHON3" ]; then
     PYTHON3VERSION=$($PYTHON3 -c 'import sys;print("{0}.{1}".format(sys.version_info.major, sys.version_info.minor))')
 
     python3 () {
-        PYTHONPATH="$PWD/py_modules/lib/python$PYTHON3VERSION/site-packages/:$PYTHONPATH" $PYTHON3 "$@"
+        PYTHONPATH="$MODULE_PATH/lib/python$PYTHON3VERSION/site-packages/:$PYTHONPATH" $PYTHON3 "$@"
     }
 fi
