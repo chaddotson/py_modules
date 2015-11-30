@@ -27,7 +27,7 @@ MODULE_PATH="$PWD/py_modules/"
 
 
 PYTHON=$(command -v python)
-if [ -n "$PYTHON3" ]; then
+if [ -n "$PYTHON" ]; then
 
     PYTHONVERSION=$($PYTHON -c 'import sys;print("{0}.{1}".format(sys.version_info.major, sys.version_info.minor))')
 
